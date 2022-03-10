@@ -8,7 +8,7 @@ Poner en práctica todo lo aprendido en la creación de un primer proyecto, el c
 ___
 ## Objetivo General:
 Construir aplicaciones Web empresariales utilizando el patrón MVC en el entorno de desarrollo Python/Django para dar solución a los requerimientos de la organización.
-
+___
 ## Descripción
 La empresa, llamada OnlyFlans, necesita mostrarse como una empresa seria y disponer de un espacio para mostrar sus productos, es por esto que la idea principal de la creación de este sitio web será: por un lado, la presentación de lo que se vende al público general; y por otro, la presentación de productos especiales solo para los usuarios registrados, con el fin de generar una base de clientes potenciales y una fidelización de los clientes recurrentes.
 ___
