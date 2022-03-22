@@ -3,5 +3,22 @@
 {% block 'content' %}
     <div class="container col text-center text-md-start">
         indice
+        <div class="row">
+            {% for flan in flanes_publicos %}
+            <div class="col-6 col-md-3">
+                <div class="card-mb-4">
+                    <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ flan.name }}
+                        </h5>
+                        <p class="card-text">
+                            {{ flan.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
