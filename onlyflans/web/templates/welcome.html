@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+                    <h2>
+                        Bienvenido usuario
+                    </h2>
+                    <p>
+                        Tenemos una lista de productos exclusivos para ti. ¿Quieres conocer más?
+                    </p>
+                    <a href="{% url 'contacto' %}" class="btn btn-outline-light">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container col text-center text-md-start mt-4 mb-4">
         <div class="row">
             {% for flan in flanes_privados %}

@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Flan, ContactForm
 from .forms import ContactFormModelForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def indice(request):
@@ -12,6 +13,7 @@ def indice(request):
 def acerca(request):
     return render(request, 'about.html', {})
 
+@login_required
 def bienvenido(request):
     flanes_privados = Flan.objects.filter(is_private=True)
 

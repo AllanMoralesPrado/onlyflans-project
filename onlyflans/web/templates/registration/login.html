@@ -9,25 +9,25 @@
             Iniciar sesión
         </h3>
 
-        <div>
+        <div class="text-center">
 
             <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
 
                 {% if form.errors %}
-                <p>Your username password didn't match. Please try again.</p>
+                <p>Nombre de usuario y/o contraseña no son correctos. Por favor, inténtalo de nuevo.</p>
 
                 {% endif %}
 
                 {% if next %}
                     {% if user.is_authenticated %}
                     <p>
-                        Your account doesn't have access to this page. To proceed,
-                        please login with an account that has access.
+                        Tu cuenta no tiene acceso a esta página. Para poder acceder,
+                        por favor, inicie sesión con una cuenta que tenga acceso.
                     </p>
                     {% else %}
                     <p>
-                        Please login to see this page.
+                        Por favor inicie sesión para ver esta página
                     </p>
                     {% endif %}
                 {% endif %}
@@ -54,6 +54,11 @@
                     <input class="btn btn-primary" type="submit" value="Iniciar sesión">
                 </div>
             </form>
+
+            <p class="text-center">
+                <a href="{% url 'password_reset' %}">¿Olvidaste la contraseña?</a>
+            </p>
+            
         </div>
     </div>
 </div>
