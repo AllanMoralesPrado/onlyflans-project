@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="container col text-center text-md-start">
+    <div class="px-4 py-5 my-5 text-center">
+        <h3 class="display-5 fw-bold">Sesión cerrada con éxito</h3>
+        <div class="col-lg-6 mx-auto">
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="{% url 'login' %}">Clic aquí para iniciar sesión de nuevo.</a>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

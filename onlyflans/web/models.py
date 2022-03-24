@@ -14,5 +14,7 @@ class ContactForm(models.Model):
     customer_email = models.EmailField()
     customer_name = models.CharField(max_length=64)
     message = models.TextField()
+
+
     
 # Create your models here.
