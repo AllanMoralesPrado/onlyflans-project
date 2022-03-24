@@ -8,6 +8,9 @@ class Flan(models.Model):
     image_url = models.URLField()
     slug = models.SlugField()
     is_private = models.BooleanField()
+    no_eggs = models.BooleanField()
+    no_sugar = models.BooleanField()
+    no_lactose = models.BooleanField()
 
 class ContactForm(models.Model):
     contact_form_uuid = models.UUIDField(default=uuid.uuid4,editable=False)
