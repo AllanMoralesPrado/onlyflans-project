@@ -17,11 +17,17 @@
         </div>
     </div>
 
-    <div class="container col text-center text-md-start mt-4 mb-4">
+    {% block 'filter' %}
+
+        {% include "filter.html" %}
+
+    {% endblock %}
+
+    <div class="container col text-center text-md-start">
         <div class="row">
             {% for flan in flanes_privados %}
-            <div class="col-6 col-md-3">
-                <div class="card-mb-4">
+            <div class="col-6 col-md-3 mb-4">
+                <div class="card mb-4 h-100">
                     <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -29,6 +35,11 @@
                         </h5>
                         <p class="card-text">
                             {{ flan.description }}
+                        </p>
+                    </div>
+                    <div class="card-footer bg-dark">
+                        <p class="h4 card-text text-end text-white">
+                            {{ flan.price }} CLP
                         </p>
                     </div>
                 </div>
