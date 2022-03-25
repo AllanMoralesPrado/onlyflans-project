@@ -1,31 +1,38 @@
-<div class="container my-4">
-    <div class="row">
-        <div class="col">
-            <div class="h-100 py-3 px-5 text-dark bg-light rounded-3 ">
-                <div class="row">
-                    <div class="col m-auto">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="no_sugar" name="no_sugar" />
-                            <label class="form-check-label" for="no_sugar">Sin azúcar</label>
+{% if '/bienvenido' in request.path %}
+    <form action="/bienvenido" method="get">
+{% else %}
+    <form action="." method="get">
+{% endif %}
+    <div class="container my-4" id="filterbar">
+        <div class="row">
+            <div class="col">
+                <div class="h-100 py-3 px-5 text-dark bg-light rounded-3 ">
+                    <div class="row">
+                        <div class="col m-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="no_sugar" name="no_sugar" />
+                                <label class="form-check-label" for="no_sugar">Sin azúcar</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col m-auto">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="no_eggs" name="no_eggs" />
-                            <label class="form-check-label" for="no_eggs">Sin huevo</label>
+                        <div class="col m-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="no_eggs" name="no_eggs" />
+                                <label class="form-check-label" for="no_eggs">Sin huevo</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col m-auto">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="no_lactose" name="no_lactose" />
-                            <label class="form-check-label" for="no_lactose">Sin lactosa</label>
+                        <div class="col m-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="no_lactose" name="no_lactose" />
+                                <label class="form-check-label" for="no_lactose">Sin lactosa</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col text-end">
-                        <button class="btn btn-outline-dark" type="submit">Aplicar Filtro</button>
+                        <div class="col text-end">
+                            <button class="btn btn-outline-dark" type="submit" id="filterbtn">Aplicar Filtro</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>
+    

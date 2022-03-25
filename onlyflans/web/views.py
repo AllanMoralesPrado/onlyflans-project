@@ -8,6 +8,19 @@ from django.contrib.auth.decorators import login_required
 def indice(request):
     flanes_publicos = Flan.objects.filter(is_private=False)
 
+    sin_azucar = request.GET.get('no_sugar')
+    sin_lactosa = request.GET.get('no_lactose')
+    sin_huevos = request.GET.get('no_eggs')
+    
+    if sin_azucar == 'on':
+        flanes_publicos = flanes_publicos.filter(no_sugar=True)
+    
+    if sin_lactosa == 'on':
+        flanes_publicos = flanes_publicos.filter(no_lactose=True)
+
+    if sin_huevos == 'on':
+        flanes_publicos = flanes_publicos.filter(no_eggs=True)
+
     return render(request, 'index.html', {'flanes_publicos':flanes_publicos})
 
 def acerca(request):
@@ -16,6 +29,19 @@ def acerca(request):
 @login_required
 def bienvenido(request):
     flanes_privados = Flan.objects.filter(is_private=True)
+
+    sin_azucar = request.GET.get('no_sugar')
+    sin_lactosa = request.GET.get('no_lactose')
+    sin_huevos = request.GET.get('no_eggs')
+    
+    if sin_azucar == 'on':
+        flanes_privados = flanes_privados.filter(no_sugar=True)
+    
+    if sin_lactosa == 'on':
+        flanes_privados = flanes_privados.filter(no_lactose=True)
+
+    if sin_huevos == 'on':
+        flanes_privados = flanes_privados.filter(no_eggs=True)
 
     return render(request, 'welcome.html', {'flanes_privados':flanes_privados})
 
@@ -32,3 +58,4 @@ def contacto(request):
         form = ContactFormModelForm()
 
     return render(request, 'contactus.html', {'form':form})
+
