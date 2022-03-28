@@ -17,12 +17,17 @@
         </div>
     </div>
     
+    {% block 'filter' %}
 
-    <div class="container col text-center text-md-start mt-4 mb-4">
+        {% include "filter.html" %}
+
+    {% endblock %}
+
+    <div class="container col text-center text-md-start">
         <div class="row">
             {% for flan in flanes_publicos %}
-            <div class="col-6 col-md-3">
-                <div class="card-mb-4">
+            <div class="col-6 col-md-3 mb-4">
+                <div class="card mb-4 h-100">
                     <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -32,8 +37,18 @@
                             {{ flan.description }}
                         </p>
                     </div>
+                    <div class="card-footer bg-dark">
+                        <p class="h4 card-text text-end text-white">
+                            {{ flan.price }} CLP
+                        </p>
+                    </div>
                 </div>
             </div>
+            {% empty %}
+                <div class="text-center">
+                    <p class="h3 text-dark">OH NO! Ninguno de nosotros es el flan que buscas.</p>
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9596faea-6b9b-410c-80f9-f1c7e08ec77c/d7kvh0v-31dd2f67-aa77-46d6-afd1-603d8cd60182.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi85NTk2ZmFlYS02YjliLTQxMGMtODBmOS1mMWM3ZTA4ZWM3N2MvZDdrdmgwdi0zMWRkMmY2Ny1hYTc3LTQ2ZDYtYWZkMS02MDNkOGNkNjAxODIuZ2lmIn1dXX0.IIiH5hBZ0p30tF3XqPs6P23dIxLso7Rdcvl0kD8fD4Q" class="img-fluid rounded" alt="flan-animated" width="300">
+                </div>
             {% endfor %}
         </div>
     </div>

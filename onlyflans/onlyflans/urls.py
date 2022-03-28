@@ -26,6 +26,7 @@ urlpatterns = [
     path('bienvenido', bienvenido, name="bienvenido"),
     path('exito', exito, name="exito"),
     path('contacto', contacto, name="contacto"),
+    path('blog/', include('web.urls', namespace='web')),
     path('accounts/', include('django.contrib.auth.urls'))
 ]
 
