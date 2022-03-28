@@ -2,7 +2,21 @@
 
 {% block 'content' %}
     <div class="container col text-center text-md-start">
-        {{ post.title }}
-        {{ post.excerpt|truncatechars:50 }}
+        <header>
+            <br>
+            <h1><span class="badge rounded-pill bg-dark">{{ post.category }}</span> {{ post.title }}</h1>
+            <br>
+            <h3>{{ post.excerpt }}</h3>
+            <br>
+            <h6> <i>Autor: {{ post.author }} - {{ post.published }}</i> </h6>
+            <hr>
+        </header>
+        <figure>
+            <img src={{ post.image_url }} alt="post-img-default" class="d-block mx-auto w-40">
+            <figcaption class="h4 text-center">Fig.1 - Un Flan Feliz :) </figcaption>
+        </figure>
+        {{ post.content|safe }}
     </div>
+    
+    
 {% endblock %}

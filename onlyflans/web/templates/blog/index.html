@@ -3,22 +3,25 @@
 {% block 'content' %}
     <div class="container col text-center text-md-start">
         {% for post in posts %}
-            <a href="{% url 'web:post-detail' slug=post.slug %}"> 
-                {{ post.title }}
-                {{ post.excerpt|truncatechars:50 }}
-            </a>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <a href="{% url 'web:post-detail' slug=post.slug %}" style="text-decoration:none;"> 
+                        <div class="card">
+                            <img src={{ post.image_url }} class="card-img-top" alt="flan-gif-default">
+                            <div class="card-body text-dark">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <p class="fst-italic card-text text-end text-dark">
+                                    Publicado por {{ post.author }} - {{ post.published }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>   
+            </div>
         {% endfor %}
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>   
-        </div>
     </div>
 
 {% endblock %}
