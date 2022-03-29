@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+    <div class="container col text-center text-md-start mt-4">
+        {% for post in posts %}
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                    <a href="{% url 'web:post-detail' slug=post.slug %}" style="text-decoration:none;"> 
+                        <div class="card">
+                            <img src={{ post.image_url }} class="card-img-top" alt="flan-gif-default">
+                            <div class="card-body text-dark">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <p class="fst-italic card-text text-end text-dark">
+                                    Publicado por {{ post.author }} - {{ post.published }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>   
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
