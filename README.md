@@ -20,8 +20,7 @@ El proyecto está dividido en 5 hitos incrementales:
 4. Manejo de perfiles con Django: implementar inicio y cierre de sesión y proteger una vista para hacerla inaccesible por usuarios no autenticados en el sistema.
 5. Presentación del proyecto: demostración del código funcional y explicación de particularidades.
 ___
-## Autores del proyecto:
+## Autor del proyecto:
 - Allan Morales
-- y compañía
 
 
