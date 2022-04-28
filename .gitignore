@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#Google Drive bad objects
+# Google Drive bad objects
 .ini
 *desktop.ini
 desktop.ini
